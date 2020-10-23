@@ -1,3 +1,3 @@
 # xiaomi-flasher
-A sample fastboot flasher for Xiaomi devices with support for bat files.
-Dependencies: latest android sdk platform-tools installed.
+A light and portable substitute to MiFlash.
+Dependencies: latest android sdk platform-tools and usb drivers installed.
