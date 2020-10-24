@@ -17,6 +17,7 @@ namespace xiaomi_flasher
     {
         private string fileContent;
         private string filePath;
+        private string file;
 
         public Form1()
         {
@@ -25,7 +26,7 @@ namespace xiaomi_flasher
     }
         
          
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             
             using (FolderBrowserDialog openFileDialog = new FolderBrowserDialog())
@@ -71,7 +72,7 @@ namespace xiaomi_flasher
 
 
        
-    private void button2_Click(object sender, EventArgs e)
+    private void pictureBox2_Click(object sender, EventArgs e)
         {
             string file = listBox1.SelectedItem.ToString();
             string slash = "/";
@@ -83,5 +84,6 @@ namespace xiaomi_flasher
         {
 
         }
+
     }
 }
