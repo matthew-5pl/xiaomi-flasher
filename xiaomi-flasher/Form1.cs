@@ -10,22 +10,58 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+
+
 
 namespace xiaomi_flasher
 {
+
     public partial class Form1 : Form
     {
+
+        int mov;
+        int movX;
+        int movY;
+        
+
+        private HashSet<Control> controlsToMove = new HashSet<Control>();
         private string fileContent;
         private string filePath;
         private string file;
 
+
         public Form1()
         {
             InitializeComponent();
+
+
+
+
+        }
+
+
+        public void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+           
+            mov = 1;
             
-    }
-        
-         
+            movX = e.X;
+            
+            movY = e.Y;
+
+        }
+
+        private void pictureBox3_MouseMove(object sender, MouseEventArgs e)
+        {
+            
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             
@@ -85,5 +121,52 @@ namespace xiaomi_flasher
 
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
+        }
+
+        private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+
+            movX = e.X;
+
+            movY = e.Y;
+        }
+
+        private void pictureBox4_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
+        }
+
+        private void pictureBox4_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
     }
 }
