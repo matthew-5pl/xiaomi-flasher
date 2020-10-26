@@ -11,18 +11,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-
-
+using System.Windows;
 
 namespace xiaomi_flasher
 {
 
     public partial class Form1 : Form
     {
-
         int mov;
         int movX;
         int movY;
+        int movX2;
+        int movY2;
+        int mov2;
         
 
         private HashSet<Control> controlsToMove = new HashSet<Control>();
@@ -34,10 +35,6 @@ namespace xiaomi_flasher
         public Form1()
         {
             InitializeComponent();
-
-
-
-
         }
 
 
@@ -126,10 +123,7 @@ namespace xiaomi_flasher
 
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
@@ -144,29 +138,6 @@ namespace xiaomi_flasher
         private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
         {
             mov = 0;
-        }
-
-        private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
-        {
-            mov = 1;
-
-            movX = e.X;
-
-            movY = e.Y;
-        }
-
-        private void pictureBox4_MouseUp(object sender, MouseEventArgs e)
-        {
-            mov = 0;
-        }
-
-        private void pictureBox4_MouseMove(object sender, MouseEventArgs e)
-        {
-
-            if (mov == 1)
-            {
-                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
-            }
         }
     }
 }
